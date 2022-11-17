@@ -7,32 +7,32 @@ locals {
 }
 
 resource "local_file" "policy_trust_framework_base" {
-  content     = var.policy_trust_framework_base_content
-  filename    = "${local.b2c_policy_path}/TrustFrameworkBase.xml"
+  content  = var.policy_trust_framework_base_content
+  filename = "${local.b2c_policy_path}/TrustFrameworkBase.xml"
 }
 resource "local_file" "policy_trust_framework_localization" {
-  content     = var.policy_trust_framework_localization_content
-  filename    = "${local.b2c_policy_path}/TrustFrameworkLocalization.xml"
+  content  = var.policy_trust_framework_localization_content
+  filename = "${local.b2c_policy_path}/TrustFrameworkLocalization.xml"
 }
 resource "local_file" "policy_trust_framework_extensions" {
-  content     = var.policy_trust_framework_extensions_content
-  filename    = "${local.b2c_policy_path}/TrustFrameworkExtensions.xml"
+  content  = var.policy_trust_framework_extensions_content
+  filename = "${local.b2c_policy_path}/TrustFrameworkExtensions.xml"
 }
 resource "local_file" "policy_trust_framework_extensions_passwordless" {
-  content     = var.policy_trust_framework_extensions_passwordless_content
-  filename    = "${local.b2c_policy_path}/TrustFrameworkExtensionsPasswordless.xml"
+  content  = var.policy_trust_framework_extensions_passwordless_content
+  filename = "${local.b2c_policy_path}/TrustFrameworkExtensionsPasswordless.xml"
 }
 resource "local_file" "policy_sign_up_or_sign_in" {
-  content     = var.policy_sign_up_or_sign_in_content
-  filename    = "${local.b2c_policy_path}/SignUpOrSignin.xml"
+  content  = var.policy_sign_up_or_sign_in_content
+  filename = "${local.b2c_policy_path}/SignUpOrSignin.xml"
 }
 resource "local_file" "policy_profile_edit" {
-  content     = var.policy_profile_edit_content
-  filename    = "${local.b2c_policy_path}/ProfileEdit.xml"
+  content  = var.policy_profile_edit_content
+  filename = "${local.b2c_policy_path}/ProfileEdit.xml"
 }
 resource "local_file" "policy_password_reset" {
-  content     = var.policy_password_reset_content
-  filename    = "${local.b2c_policy_path}/PasswordReset.xml"
+  content  = var.policy_password_reset_content
+  filename = "${local.b2c_policy_path}/PasswordReset.xml"
 }
 
 resource "null_resource" "powershell" {
