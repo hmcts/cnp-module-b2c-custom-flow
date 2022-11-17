@@ -35,9 +35,8 @@ resource "local_file" "policy_password_reset" {
     filename = "${local.b2c_policy_path}/PasswordReset.xml"
 }
 
-
-
-
-provisioner "local-exec" {
-        command = "PowerShell -file ${path.module}/${local.script_name} -clientId ${local.client_id} -clientSecret ${var.client_secret} -tenantId ${local.tenant_id} -folder ${path.module}/ -files \"TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,TrustFrameworkExtensionsPasswordless.xml,SignUpOrSignin.xml,ProfileEdit.xml,PasswordReset.xml\""
-    }
+resource "null_resource" "powershell" {
+  provisioner "local-exec" {
+    command = "PowerShell -file ${path.module}/${local.script_name} -clientId ${local.client_id} -clientSecret ${var.client_secret} -tenantId ${local.tenant_id} -folder ${path.module}/ -files \"TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,TrustFrameworkExtensionsPasswordless.xml,SignUpOrSignin.xml,ProfileEdit.xml,PasswordReset.xml\""
+  }
+}
